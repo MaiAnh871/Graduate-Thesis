@@ -19,7 +19,7 @@
       "function": {
         "ddbtrackerapp49d3e19449d3e194PostConfirmation": {
           "deploymentBucketName": "amplify-ddbtrackerapp-dev-151224-deployment",
-          "s3Key": "amplify-builds/ddbtrackerapp49d3e19449d3e194PostConfirmation-553966434a6c50724f53-build.zip"
+          "s3Key": "amplify-builds/ddbtrackerapp49d3e19449d3e194PostConfirmation-4a67464d6e4a414e6e65-build.zip"
         }
       },
       "api": {
