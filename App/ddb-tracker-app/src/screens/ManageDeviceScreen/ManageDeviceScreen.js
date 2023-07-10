@@ -1,12 +1,9 @@
 import { useContext, useEffect } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Button } from 'react-native';
 
 import { DevicesContext } from '../../store/devices-context';
-import IconButton from '../../components/UI/IconButton';
 import { GlobalStyles } from '../../constants/styles';
 import MyMapView from '../../components/MyMapView/MyMapView';
-import MyMap from '../../components/MyMapView/MyMap';
-import { Ionicons } from '@expo/vector-icons';
 import { useDispatch } from 'react-redux';
 import { addDeviceID } from '../../redux/reducer';
 

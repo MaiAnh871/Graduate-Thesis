@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import { StyleSheet, Text, View, StatusBar, Button } from 'react-native';
 import { Amplify, PubSub, Hub, Auth } from 'aws-amplify';
 import { AWSIoTProvider, CONNECTION_STATE_CHANGE, ConnectionState } from '@aws-amplify/pubsub';
 import { Marker, Polyline } from 'react-native-maps';
+import { GlobalStyles } from '../../constants/styles';
 import MapView from 'react-native-maps';
 import awsmobile from '../../aws-exports';
 
@@ -47,7 +48,7 @@ export default function MyMapView({ manageDeviceId }) {
 
     useEffect(() => {
         let subscription;
-        Amplify.PubSub.subscribe(`anhttm8-tracker/${manageDeviceId}/message`).subscribe({    
+        PubSub.subscribe(`anhttm8-tracker/${manageDeviceId}/message`).subscribe({    
             next: data => {      
             /*
             Type of message:
@@ -137,8 +138,14 @@ export default function MyMapView({ manageDeviceId }) {
                     description = "The location where tracking started"
                 />
             )}
-          </MapView>
-          <StatusBar style="auto" />
+        </MapView>
+        <View style={styles.button}>
+            <Button title="Get current location" />
+        </View>
+        <View style={styles.location}>
+            <Text>Latitude: </Text>
+            <Text>Longitude: </Text>
+        </View>
         </View>
     );
 }
@@ -155,4 +162,23 @@ const styles = StyleSheet.create({
       width: '100%',
       height: '100%',
     },
+    button: {
+        position: 'absolute',
+        bottom: 10,
+        left: '65%',
+        padding: 1,
+        borderRadius: 5,
+        width: '30%',
+        backgroundColor: '#fff',
+        elevation: 3,
+    },
+    location: {
+        position: 'absolute',
+        top: 20,
+        left: 20,
+        backgroundColor: '#fff',
+        padding: 10,
+        borderRadius: 10,
+        elevation: 3,
+    }
 });
