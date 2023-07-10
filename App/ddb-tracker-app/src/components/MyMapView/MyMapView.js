@@ -140,7 +140,10 @@ export default function MyMapView({ manageDeviceId }) {
             )}
         </MapView>
         <View style={styles.button}>
-            <Button title="Get current location" />
+            <Button
+                title="Get current location"
+                color="tomato"
+            />
         </View>
         <View style={styles.location}>
             <Text>Latitude: </Text>
@@ -162,14 +165,14 @@ const styles = StyleSheet.create({
       width: '100%',
       height: '100%',
     },
+    // create button styles with orange text at the bottom of the screen
     button: {
         position: 'absolute',
-        bottom: 10,
-        left: '65%',
-        padding: 1,
-        borderRadius: 5,
-        width: '30%',
+        bottom: 20,
+        left: 20,
         backgroundColor: '#fff',
+        padding: 10,
+        borderRadius: 10,
         elevation: 3,
     },
     location: {
@@ -180,5 +183,5 @@ const styles = StyleSheet.create({
         padding: 10,
         borderRadius: 10,
         elevation: 3,
-    }
+    },
 });
